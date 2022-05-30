@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <title>BrandPay Sample</title>
     <script src="https://js.tosspayments.com/v1/brandpay"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script>
       var clientKey = '<%= CLIENT_KEY %>';
-      var customerKey = 'customer-key-tomkim3'
+      var customerKey = 'customer-key-tomkim6'
   
       // 초기화
       var brandpay = BrandPay(clientKey, customerKey, {
@@ -16,11 +17,19 @@
 
       function requestPayment() {
         brandpay.requestPayment({
-          amount: 15000, // 결제 금액
-          orderId: 'order-id-1', // 주문에 대한 ID 값
+          amount: 5000, // 결제 금액
+          orderId: 'order-id-4', // 주문에 대한 ID 값
           orderName: '토스 티셔츠 외 2건', // 주문명
           customerEmail: 'customer@email.com', // 고객의 이메일 주소 (optional)
         })
+          .then((res) => {
+            console.log(res)
+            return axios.post('http://localhost:3000/confirm-payment', res)
+          })
+          .then(() => {
+            console.log('success')
+            window.location.href = 'http://localhost:3000/payment-success'
+          })
       }
   </script>
 
