@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BrandPay Sample</title>
+    <script src="https://js.tosspayments.com/v1/brandpay"></script>
+
+    <script>
+      var clientKey = '<%= CLIENT_KEY %>';
+      var customerKey = 'customer-key-tomkim3'
+  
+      // 초기화
+      var brandpay = BrandPay(clientKey, customerKey, {
+        redirectUrl: 'http://localhost:3000/callback-auth'
+      })
+
+      function requestPayment() {
+        brandpay.requestPayment({
+          amount: 15000, // 결제 금액
+          orderId: 'order-id-1', // 주문에 대한 ID 값
+          orderName: '토스 티셔츠 외 2건', // 주문명
+          customerEmail: 'customer@email.com', // 고객의 이메일 주소 (optional)
+        })
+      }
+  </script>
+
+  </head>
+  <body>
+    <button onclick="requestPayment()">결제하기</button>
+  </body>
+</html>
+
