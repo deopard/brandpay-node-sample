@@ -23,11 +23,11 @@
           customerEmail: 'customer@email.com', // 고객의 이메일 주소 (optional)
         })
           .then((res) => {
-            console.log(res)
+            // 결제 승인 요청
             return axios.post('http://localhost:3000/confirm-payment', res)
           })
           .then(() => {
-            console.log('success')
+            // 결제 성공 페이지로 redirect
             window.location.href = 'http://localhost:3000/payment-success'
           })
       }

@@ -18,14 +18,12 @@ app.set('views', path.join(__dirname, 'views'))
 
 // 결제창 실행 페이지
 app.get('/checkout', (req, res) => {
-  console.log('@@ /checkout')
   res.render('checkout', { CLIENT_KEY })
 })
 
 // 결제를 위한 Access Token 발급을 진행하는 경로
 // https://docs.tosspayments.com/guides/brandpay/auth
 app.get('/callback-auth', async (req, res) => {
-  console.log('@@ /callback-auth')
   await axios.post('https://api.tosspayments.com/v1/brandpay/authorizations/access-token', JSON.stringify({
     grantType: 'AuthorizationCode',
     // 브랜드페이 서버에서 넘겨준 code와 customerKey 값 전달
@@ -45,7 +43,6 @@ app.get('/callback-auth', async (req, res) => {
 
 // 최종 결제 승인
 app.post('/confirm-payment', async (req, res) => {
-  console.log('@@ /confirm-payment')
   await axios.post(`https://api.tosspayments.com/v1/payments/${req.body.paymentKey}`, {
         orderId: req.body.orderId,
         amount: req.body.amount
@@ -63,10 +60,9 @@ app.post('/confirm-payment', async (req, res) => {
 
 // 결제 성공 페이지
 app.get('/payment-success', (req, res) => {
-  console.log('@@ /payment-success')
   res.render('payment-success')
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example BrandPay app listening on port ${port}`)
 })
