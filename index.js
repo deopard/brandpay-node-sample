@@ -1,31 +1,17 @@
 const express = require('express')
-const path = require('path')
 const axios = require('axios')
 const bodyParser = require('body-parser')
-const nunjucks = require('nunjucks')
 const app = express()
 const port = 3000
 
-require('dotenv').config()
-
-// 브랜드페이에서 가맹점에 부여한 client key
-const CLIENT_KEY = process.env.CLIENT_KEY
 // 브랜드페이에서 가맹점에 부여한 secret key (절대 외부 유출되면 안됨)
-const SECRET_KEY = process.env.SECRET_KEY
+const SECRET_KEY = 'test_sk_abcdefghijklmnopqrstuvwxyzA9'
 
 app.use(bodyParser.json())
-// app.set('view engine', 'ejs')
-// app.set('views', path.join(__dirname, 'views'))
-
-nunjucks.configure('views', {
-    autoescape: true,
-    express: app
-});
-
 
 // 결제창 실행 페이지
 app.get('/checkout', (req, res) => {
-  res.render('checkout.html', { CLIENT_KEY })
+  res.sendFile(__dirname + '/views/checkout.html')
 })
 
 // 결제를 위한 Access Token 발급을 진행하는 경로
@@ -67,7 +53,7 @@ app.post('/confirm-payment', async (req, res) => {
 
 // 결제 성공 페이지
 app.get('/payment-success', (req, res) => {
-  res.render('payment-success.html')
+  res.sendFile(__dirname + '/views/payment-success.html')
 })
 
 app.listen(port, () => {

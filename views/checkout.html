@@ -7,8 +7,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script>
-      var clientKey = '{{ CLIENT_KEY }}';
-      var customerKey = 'customer-key-tomkim6'
+      var clientKey = 'test_ck_abcdefghijklmnopqrstuvwxyzA9';
+      var customerKey = 'customer-key-1'
   
       // 초기화
       var brandpay = BrandPay(clientKey, customerKey, {
@@ -18,7 +18,7 @@
       function requestPayment() {
         brandpay.requestPayment({
           amount: 5000, // 결제 금액
-          orderId: 'order-id-4', // 주문에 대한 ID 값
+          orderId: 'order-id-0', // 주문에 대한 ID 값
           orderName: '토스 티셔츠 외 2건', // 주문명
           customerEmail: 'customer@email.com', // 고객의 이메일 주소 (optional)
         })
