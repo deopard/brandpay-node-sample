@@ -4,8 +4,9 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 
-// 브랜드페이에서 가맹점에 부여한 secret key (절대 외부 유출되면 안됨)
-const SECRET_KEY = 'test_sk_abcdefghijklmnopqrstuvwxyzA9'
+// 브랜드페이에서 가맹점에 부여한 secret key (절대 외부나 client에 노출되면 안됨)
+// 샘플로 제시되는 key는 테스트 용도로만 사용할 수 있음
+const SECRET_KEY = 'test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R'
 
 app.use(bodyParser.json())
 
