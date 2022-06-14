@@ -10,9 +10,9 @@
       // 샘플로 제시되는 key는 테스트 용도로만 사용할 수 있음
       var clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq'
       // customerKey는 가맹점에서 생성하는 것으로 고객별로 고유해야 함. 
-      var customerKey = null
+      var customerKey = '{UNIQUE_CUSTOMER_KEY}'
       // orderId는 가맹점에서 생성하는 것으로 주문별로 고유해야 함. 
-      var orderId = null
+      var orderId = '{UNIQUE_ORDER_ID}'
 
       // 초기화
       var brandpay = BrandPay(clientKey, customerKey, {
@@ -49,10 +49,10 @@
       }
 
       function validateParams() {
-        if (!customerKey) {
+        if (customerKey === '{UNIQUE_CUSTOMER_KEY}') {
           alert('views/checkout.html 파일의 customerKey 값을 설정해주세요.')
           return false
-        } else if (!orderId) {
+        } else if (orderId === '{UNIQUE_ORDER_ID}') {
           alert('views/checkout.html 파일의 orderId 값을 설정해주세요.')
           return false
         }
