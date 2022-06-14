@@ -1,6 +1,36 @@
 # 브랜드페이 SDK 연동 샘플 프로젝트
 
-브랜드페이 JavaScript SDK를 이용해 자체 간편결제를 구축할 수 있는 예제입니다.
+브랜드페이 JavaScript SDK를 이용해 자체 간편결제를 구축할 수 있는 예제입니다. 
+
+샘플 프로젝트를 사용한 브랜드페이 연동 가이드는 [브랜드페이 UI 연동하기](https://docs.tosspayments.com/guides/brandpay/ui)에서 확인하세요.
+
+## 준비하기
+
+샘플 프로젝트를 사용하려면 [Node.js](https://nodejs.org/ko/)가 필요합니다.
+
+먼저 내 컴퓨터의 Node.js 버전을 확인하세요.
+
+```sh
+node -v
+```
+
+[홈페이지](https://nodejs.org/ko/download/)에서 환경에 맞는 인스톨러를 다운로드 받거나 nvm(Node Version Manager, Node.js 버전 관리자)을 사용해서 설치하세요.
+
+[Node.js 버전](https://nodejs.org/ko/about/releases/)을 확인하고 안정화 된 현재 버전(LTS)을 설치합니다. 버전 v14 이상을 권장합니다.
+
+### nvm으로 설치하기
+
+먼저 [nvm 최신 버전](https://github.com/nvm-sh/nvm/releases)을 확인한 뒤 아래 커맨드의 `{VERSION}`에 추가해서 nvm을 설치합니다. ([참고](https://github.com/nvm-sh/nvm#installing-and-updating))
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{VERSION}/install.sh | bash
+```
+
+nvm이 설치되었다면 아래 커맨드로 Node.js를 설치할 수 있습니다.
+
+```sh
+nvm install {NODE_VERSION}
+```
 
 ## 시작하기
 
@@ -24,28 +54,12 @@ node index.js # 서버 실행
 
 ![페이지 예시 이미지](https://static.tosspayments.com/docs/brandpay/test/checkout.png)
 
-### Node.js가 설치되어 있지 않다면
-
-1. nvm(Node Version Manager, Node.js 버전 관리자) 설치
-
-  nvm 최신 버전 확인 후 아래 `{VERSION}`에 추가한 뒤 아래 커맨드로 nvm을 설치합니다.
-
-  ```sh
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{VERSION}/install.sh | bash
-  ```
-
-* [Window에서 설치하기](https://github.com/coreybutler/nvm-windows/)
-
-2. Node.js 설치
-
-  [Node.js 버전](https://nodejs.org/ko/about/releases/)을 확인하고 LTS 버전을 설치합니다.
-
-  ```sh
-  nvm install {NODE_VERSION}
-  ```
-
 ## 인증
 
-`{CLIENT_KEY}`, `{SECRET_KEY}`로 작성되어 있는 부분을 내 상점의 테스트용 API 키로 변경하세요. 테스트용 API 키는 [개발 정보 페이지](https://onboarding.tosspayments.com/my/integration)에서 확인할 수 있습니다.
+클라이언트 코드의 `clientKey`, 서버 코드의 `SECRET_KEY`를 **내 상점의 테스트용 API 키**로 변경하세요. 테스트용 API 키는 [개발 정보 페이지](https://onboarding.tosspayments.com/my/integration)에서 확인할 수 있습니다.
 
 API 키에 대한 더 자세한 내용은 [API 사용하기](/guides/apis/usage#가맹점용-api-키-발급받기) 페이지를 참고하세요.
+
+
+
+
