@@ -1,35 +1,34 @@
 # 브랜드페이 SDK 연동 샘플 프로젝트
 
-브랜드페이 JavaScript SDK를 이용해 자체 간편결제를 구축할 수 있는 예제입니다. 
+브랜드페이 JavaScript SDK를 이용해 자체 간편결제를 구축할 수 있는 Node.js 샘플 프로젝트입니다.
 
-샘플 프로젝트를 사용한 브랜드페이 연동 가이드는 [브랜드페이 UI 연동하기](https://docs.tosspayments.com/guides/brandpay/ui)에서 확인하세요.
+샘플 프로젝트를 사용한 브랜드페이 연동 방법은 [브랜드페이 UI 연동하기](https://docs.tosspayments.com/guides/brandpay/integration)에서 확인하세요.
 
 ## 준비하기
 
-샘플 프로젝트를 사용하려면 [Node.js](https://nodejs.org/ko/)가 필요합니다.
-
-먼저 내 컴퓨터의 Node.js 버전을 확인하세요.
+샘플 프로젝트를 사용하려면 [Node.js](https://nodejs.org/ko/)가 필요합니다. 먼저 내 컴퓨터의 Node.js 버전을 확인하세요.
 
 ```sh
-node -v
+$ node -v
+$ v16.15.1
 ```
 
-[홈페이지](https://nodejs.org/ko/download/)에서 환경에 맞는 인스톨러를 다운로드 받거나 nvm(Node Version Manager, Node.js 버전 관리자)을 사용해서 설치하세요.
+<!-- ### Node.js 설치하기 -->
 
-[Node.js 버전](https://nodejs.org/ko/about/releases/)을 확인하고 안정화 된 현재 버전(LTS)을 설치합니다. 버전 v14 이상을 권장합니다.
+[Node.js 홈페이지](https://nodejs.org/ko/download/)에서 환경에 맞는 인스톨러를 다운로드 하거나 [nvm](https://github.com/nvm-sh/nvm#about)(Node Version Manager)을 사용해서 설치하세요.
 
-### nvm으로 설치하기
+#### nvm으로 설치하기
 
-먼저 [nvm 최신 버전](https://github.com/nvm-sh/nvm/releases)을 확인한 뒤 아래 커맨드의 `{VERSION}`에 추가해서 nvm을 설치합니다. ([참고](https://github.com/nvm-sh/nvm#installing-and-updating))
+[nvm 최신 버전](https://github.com/nvm-sh/nvm/releases)을 확인한 뒤 아래 커맨드의 `{VERSION}`에 추가해서 nvm을 설치합니다. ([참고](https://github.com/nvm-sh/nvm#installing-and-updating))
 
 ```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{VERSION}/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{VERSION}/install.sh | bash
 ```
 
 nvm이 설치되었다면 아래 커맨드로 Node.js를 설치할 수 있습니다.
 
 ```sh
-nvm install {NODE_VERSION}
+$ nvm install {NODE_VERSION}
 ```
 
 ## 시작하기
@@ -37,15 +36,15 @@ nvm install {NODE_VERSION}
 먼저 이 레포지토리를 [클론](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)합니다.
 
 ```sh
-git clone https://github.com/tosspayments/brandpay-quickstart # 샘플 프로젝트 클론
-cd brandpay-quickstart
+$ git clone https://github.com/tosspayments/brandpay-quickstart # 샘플 프로젝트 클론
+$ cd brandpay-quickstart
 ```
 
 의존성 패키지를 다운로드하고 서버를 실행합니다.
 
 ```sh
-npm install   # 의존성 패키지 다운로드
-node index.js # 서버 실행
+$ npm install   # 의존성 패키지 다운로드
+$ node index.js # 서버 실행
 ```
 
 브라우저에서 [http://localhost:3000/checkout](http://localhost:3000/checkout) 페이지로 접속합니다.
