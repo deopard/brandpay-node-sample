@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>BrandPay Sample</title>
+
+    <link rel="stylesheet" type="text/css" href="https://static.toss.im/tps/main.css">
+    <link rel="stylesheet" type="text/css" href="https://static.toss.im/tps/others.css">
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+    
     <!-- BrandPay SDK script 추가 -->
     <script src="https://js.tosspayments.com/v1/brandpay"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -68,7 +73,12 @@
 
   </head>
   <body>
-    <button onclick="requestPayment()">결제하기</button>
+    <div class="wrapper vertical">
+      <img src="/static/image/t-short.png">
+      <p>토스 티셔츠 외 2건</p>
+      <p>금액: 5,000원</p>
+      <button class="button" type="primary" onclick="requestPayment()">결제하기</button>
+    </div>
   </body>
 </html>
 
