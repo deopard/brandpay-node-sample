@@ -13,7 +13,7 @@
       
       // [TODO] 아래 키는 테스트용 클라이언트 키입니다. 내 상점의 키 값으로 변경하세요.
       var clientKey = 'test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq'
-      // [TODO] 상점에서 만든 고객의 고유 ID로 변경하세요.
+      // [TODO] 상점에서 고객을 구분하기 위해 발급한 고객의 고유 ID로 변경하세요.
       var customerKey = 'CUSTOMER_KEY'
       // [TODO] 상점에서 주문 건에 대해 발급한 고유 ID로 변경하세요.
       var orderId = 'ORDER_ID'
@@ -21,11 +21,11 @@
       // BrandPay 객체 초기화
       var brandpay = BrandPay(clientKey, customerKey, {
         // [TODO] 상점 개발 정보 페이지에 추가한 리다이렉트 URL이 있다면 아래 값을 변경하세요.
-        redirectUrl: 'http://localhost:3000/auth'
+        redirectUrl: 'http://localhost:3000/callback-auth'
       })
      
       function requestPayment() {
-        if (!validateParams()) return 
+        if (!validateParams()) return // [NOTE] 샘플 코드 연동 과정을 돕기 위한 코드입니다. 실제 연동에 사용하지 않습니다.
 
         brandpay.requestPayment({
           amount: 5000, // 결제 금액

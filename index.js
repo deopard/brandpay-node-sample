@@ -21,7 +21,7 @@ app.get('/checkout', (req, res) => {
 // Access Token 발급 받기
 // 문서: https://docs-staging.tosspayments.com/guides/brandpay/integration#access-token-발급받기
 
-app.get('/auth', async (req, res) => {
+app.get('/callback-auth', async (req, res) => {
   await axios.post(
     "https://api.tosspayments.com/v1/brandpay/authorizations/access-token",
     JSON.stringify({
