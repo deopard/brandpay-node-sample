@@ -12,6 +12,7 @@ const port = 3000
 const SECRET_KEY = 'test_sk_zXLkKEypNArWmo50nX3lmeaxYG5R'
 
 app.use(bodyParser.json())
+app.use('/static', express.static('public'));
 
 // 결제 페이지
 app.get('/checkout', (req, res) => {
@@ -67,6 +68,11 @@ app.post('/confirm-payment', async (req, res) => {
   );
 
   res.status(200).send('OK')
+})
+
+// 결제 실패 페이지
+app.get('/payment-fail', (req, res) => {
+  res.sendFile(__dirname + '/views/payment-fail.html')
 })
 
 // 결제 성공 페이지
