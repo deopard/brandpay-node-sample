@@ -71,12 +71,12 @@ app.post('/confirm-payment', async (req, res) => {
 })
 
 // 결제 실패 페이지
-app.get('/payment-fail', (req, res) => {
-  res.sendFile(__dirname + '/views/payment-fail.html')
+app.get('/fail', (req, res) => {
+  res.sendFile(__dirname + '/views/fail.html')
 })
 
 // 결제 성공 페이지
-app.get('/payment-success', (req, res) => {
+app.get('/success', (req, res) => {
   res.sendFile(__dirname + '/views/success.html')
 })
 
